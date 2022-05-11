@@ -1,0 +1,30 @@
+<div>
+    <h2>Basic Table</h2>
+    <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Logo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- schleife um die Flughäfen und Logos -->
+            <tr *ngFor="let airlineList of airlineList">
+                <a routerLink="/passenger.component.html">
+                    <td>{{airlineList.name}} </td>
+                </a>
+
+                <a routerLink="/passenger.html">
+
+                    <td><img src="{{airlineList.logo}}" alt=""></td>
+                </a>
+
+            </tr>
+
+        </tbody>
+    </table>
+
+
+</div>
+<app-passenger></app-passenger>
