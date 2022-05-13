@@ -12,8 +12,8 @@ export class PassengerComponent implements OnInit {
  
   passengerList : any;
   ngOnInit() {
-    let response = this.http.get("https://api.instantwebtools.net/v1/passenger/1");
-    response.subscribe((data)=>this.passengerList=data);
+    let response = this.http.get("https://api.instantwebtools.net/v1/passenger?page=0&size=24");
+    response.subscribe((data)=>this.passengerList=data); 
 /*     console.log(data));
  */  
   }

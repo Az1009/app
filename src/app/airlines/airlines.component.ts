@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Response } from '../interface/responseInterface';
+import { BackendApiService } from './services/backend-api.service'; 
 
 @Component({
   selector: 'app-airlines',
@@ -7,17 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./airlines.component.scss']
 })
 export class AirlinesComponent implements OnInit {
+  airlineInterface: any ;
 
   /* objekt vom typ any */
 
   airlineList : any;
 
-  constructor(private http:HttpClient) { }
+  constructor(private backendApi: BackendApiService) { }
 
-  ngOnInit() {
-    let response = this.http.get("https://api.instantwebtools.net/v1/airlines");
-    response.subscribe((data)=>this.airlineList=data);
-/*     console.log(data));
- */  
-  }
+  async ngOnInit() {
+    this.airlineList= await this.backendApi.getAirlines();
+  /*  console.log(this.airlineList);  */
+  this.airlineInterface=  this.airlineList;
+   
+   
+     }
+     
+
 }

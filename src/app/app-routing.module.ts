@@ -7,6 +7,8 @@ import { PassengerComponent } from './passenger/passenger.component';
 /* Verlinkung  */
 const routes: Routes = [{path:'', component:AirlinesComponent},
 {path: 'passenger', component:PassengerComponent},
+{path: 'details-airline/:id', component:PassengerComponent},
+
 ];
 
 @NgModule({

@@ -1,6 +1,5 @@
 <div>
     <h2>Basic Table</h2>
-    <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -9,15 +8,16 @@
             </tr>
         </thead>
         <tbody>
-            <!-- schleife um die Flughäfen und Logos -->
-            <tr *ngFor="let airlineList of airlineList">
-                <a routerLink="/passenger.component.html">
-                    <td>{{airlineList.name}} </td>
+            <!--             schleife um die Flughäfen und Logos-->
+            <tr *ngFor="let airline of airlineList">
+
+                <a routerLink="/details-airline/{{airline.id}}">
+                    <td>{{airline.name}} </td>
                 </a>
 
-                <a routerLink="/passenger.html">
+                <a routerLink="">
 
-                    <td><img src="{{airlineList.logo}}" alt=""></td>
+                    <td><img src="{{airline.logo}}" alt=""></td>
                 </a>
 
             </tr>
@@ -27,4 +27,13 @@
 
 
 </div>
-<app-passenger></app-passenger>
+<!-- <app-passenger></app-passenger> -->
+<!-- <div *ngIf="airlineInterface" class="card">
+    <div class="card-body"></div>
+    <h5>AirlineApi</h5>
+    <p class="card-text">airlineList:{{airlineInterface.name}} </p>
+    <p class="card-text">airlineList:{{airlineInterface.logo}} </p>
+
+    <p class="card-text">airlineList:{{airlineInterface.country}} </p>
+
+</div> -->
